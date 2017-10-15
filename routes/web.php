@@ -81,9 +81,9 @@ Route::post('report-donation', 'MainController@postReportDonation');
 Route::get('rc/{package}', 'MainController@getRecycle');
 Route::get('block', 'MainController@getBlock');
 
-Route::controllers([
+/*Route::controllers([
 	'password' => 'Auth\PasswordController',
-]);
+]);*/
 
 
 
