@@ -745,7 +745,19 @@ function unmerge($d,$giver)
 
       
       $gpos->update(["priority" => $pn,"remain" => "no", "amount" => 0]);
-      
+       
+      #get pin count
+           $pin = Pins::where('used_by',$receiver->id)->where('valid',"yes")->first();
+           
+           $npc = $pin->pin_count - 1;
+           $pin->update(['pin_count' => $npc]);
+           
+           if($pin->pin_count < 1)
+           {
+           	$pin->update(['valid' => "no"]);
+           	$this->r2($receiver);
+           }
+      else{		   
       if($ras->status == "GH")
       {
       	$status = "GH-O"; 
@@ -755,10 +767,10 @@ function unmerge($d,$giver)
       
       else if($ras->status == "GH-E" ) 
       {
-      	$this->recycle($d->receiver_id);    
+      	$this->setUserStatus($receiver,"GH");
       } 
      
-      
+      }
       
       //unmerge giver
      
