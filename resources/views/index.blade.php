@@ -8,7 +8,7 @@
 
 @include("services")
 
-@include("how-it-works")
+@include("h-i-w")
 
 @include("funfacts")
 
