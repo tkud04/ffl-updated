@@ -1,4 +1,4 @@
-<div style="font-size: 0.8em; font-weight: bold;">
+<div style="font-size: 1.6em; font-weight: bold;">
 <p><span class="text-danger" style="text-align: center; ">Before You Register on FundsForLife, Please be sure you are ready to pay. ie: Be ready to make transfer of the said amount to the matched user. or be ready to visit the bank should in case you can't make transfer. </span></p><br><br>
 <p><span class="text-danger" style="text-align: center; ">Avoid SCAM!!. We have built this platform in a way to ensure scam is curbed. we will delete your account instantly if you are reported of scam.</span></p><br><br>
 <p><span class="text-danger" style="text-align: center; ">Beggars Be warned!! you will be banned if you are reported.</span></p><br><br>

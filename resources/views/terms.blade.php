@@ -1,4 +1,4 @@
-<div style="font-size: 0.8em; ">
+<div style="font-size: 1.6em; ">
 <p class="text-primary"><span style="text-align: center; ">By signing up for membership or continuing with us, you agree to the following Terms, Conditions and Disclaimers :Participants should therefore note that there is a considerable risk involved in any system. FundsForLife or its participants will not be liable for any loss resulting from downturn in the system. Participants that are not comfortable with this risk can simply disagree and not be members of FundsForLife.</span></p><br><br>
 <p class="text-primary"><span style="text-align: center; ">This service is provided on an as is, as available service. We make no warranties of any kind, either expressed or implied.</span></p><br><br>
 <p class="text-primary"><span style="text-align: center; ">We reserve the right to add or remove features and functionality, make changes on how the platform works, manage memberships, within this site, and otherwise make changes to the service and this agreement without notice.</span></p><br><br>

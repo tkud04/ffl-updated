@@ -39,10 +39,10 @@
                         <i class="fa fa-check"></i> You make donation<br>
                         <i class="fa fa-check"></i> Participant confirms your donation.<br>
                         <i class="fa fa-check"></i>Second donation will be UNLOCKED.<br>
-                        <i class="fa fa-check"></i> You are assigned ONE participants to receive from.<br>
+                        <i class="fa fa-check"></i> You are assigned ONE participant to receive from.<br>
                         <i class="fa fa-check"></i> You receive donation<br>
                         <i class="fa fa-check"></i> You confirm or reject donation.<br>
-                        <i class="fa fa-check"></i> If your activation pin is still valid, you start the cycle all over again.<br>
+                        <i class="fa fa-check"></i> If your activation pin is still valid, you start PART C all over again.<br>
                         <br><br>                    	
                     </div><!--/.col-md-12-->          
                 </div>
