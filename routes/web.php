@@ -57,6 +57,7 @@ Route::get('contact', 'MainController@getContact');
 Route::post('contact', 'MainController@postContact');
 
 Route::get('r2', 'MainController@getR2');
+Route::post('r2', 'MainController@postR2');
 
 Route::get('verify/{id?}', 'LoginController@getVerify');
 
