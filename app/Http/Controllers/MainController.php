@@ -1179,12 +1179,8 @@ public function getCountdownTest()
 
 public function getPractice()
 {
-	#$this->helpers->generateActivationPin();
-	$d1 = Carbon::now(); $d3 = Carbon::now();
-	#dd($d3);
-	$d2 = $d1->addHours(3);
-	$ret = $d2->gt($d3);
-	dd($ret);
+	$u = User::where('id',"40")->first();
+	$this->helpers->setUserStatus($u,"PH");
 }
 
 

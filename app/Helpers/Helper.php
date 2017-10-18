@@ -503,8 +503,8 @@ function unmerge($d,$giver)
     public function setUserStatus($user, $status, $data="")
    {
        //do the job
-       $as = AccountStatus::where('user_id', $user-> id)->first();	  
-       $pos = PoolPosition::where('user_id', $user-> id)->first();	  
+       $as = AccountStatus::where('user_id', $user->id)->first();	  
+       $pos = PoolPosition::where('user_id', $user->id)->first();	  
        
       if($as != null)
       {
