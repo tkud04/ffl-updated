@@ -411,7 +411,7 @@ class MainController extends Controller {
               $status = $this->helpers->useActivationPin($user, $pin);
               $s = "PH"; 
           	if($user->role == "special") $s = "GH"; 
-      	    $this->setUserStatus($receiver, $status);
+      	    $this->setUserStatus($user, $status);
 
               Session::flash("r2-status", $status);
               $u = "r2";
