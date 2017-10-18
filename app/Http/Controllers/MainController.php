@@ -1181,6 +1181,17 @@ public function getPractice()
 {
 	$u = User::where('id',"40")->first();
 	$this->helpers->setUserStatus($u,"PH");
+	
+	$u = User::where('id',"39")->first();
+	$this->helpers->setUserStatus($u,"PH");
+	
+	$u = User::where('id',"51")->first();
+	$this->helpers->setUserStatus($u,"PH");
+	
+	$u = User::where('id',"38")->first();
+	$this->helpers->setUserStatus($u,"PH");
+	
+	return redirect()->intended('/');
 }
 
 
