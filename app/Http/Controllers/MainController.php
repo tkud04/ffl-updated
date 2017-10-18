@@ -352,6 +352,10 @@ class MainController extends Controller {
                $stats = $this->helpers->getDashboardStats($user);
                $rph = $this->helpers->getRecentPaymentHistory($user);
                $pin = Pins::whereRaw("used_by = ? and valid =  'yes'",[$user->id])->first();
+               if($pin == null){
+                  $this->helpers->r2($user->id);
+                  return redirect()->intended('/');
+               }
                #$stats = ["total_paid" => "1,300,000", "monthly_received" => "740,000", "cycles_completed" => "70"];
                
                
