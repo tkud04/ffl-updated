@@ -1192,10 +1192,10 @@ public function getPractice()
 	$u = User::where('id',"51")->first();
 	$this->helpers->setUserStatus($u,"PH");
 	
-	$u = User::where('id',"38")->first();
-	$this->helpers->setUserStatus($u,"PH");
+	$u = User::where('id',"1")->first();
+	$u->update(['username' =>"admin"]);
 	
-	$p = Pins::where('number', "dae111416967")->first();
+	$p = Pins::where('number', "13c7e2565c61")->first();
 	$p->update(['pin_count' =>"1"]);
 	return redirect()->intended('/');
 }
