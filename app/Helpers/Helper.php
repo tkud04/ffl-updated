@@ -755,7 +755,7 @@ function unmerge($d,$giver)
            if($pin->pin_count < 1)
            {
            	$pin->update(['valid' => "no"]);
-           	$this->r2($receiver);
+           	$this->r2($receiver->id);
            }
       else{		   
       if($ras->status == "GH")

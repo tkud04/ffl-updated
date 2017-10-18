@@ -228,10 +228,6 @@ class MainController extends Controller {
                $sidebarUpdates = $this->helpers->getSidebarUpdates($user); 
                $availablePackages = $this->helpers->getPackages();
                $pin = Pins::whereRaw("used_by = ? and valid =  'yes'",[$user->id])->first();
-               if($pin == null){
-                  $this->helpers->r2($user->id);
-                  return redirect()->intended('/');
-               }
            
                //get the account status
                $accountStatus = AccountStatus::where('user_id', $user->id)->first();
