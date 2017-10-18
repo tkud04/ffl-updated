@@ -232,7 +232,7 @@ class MainController extends Controller {
                //get the account status
                $accountStatus = AccountStatus::where('user_id', $user->id)->first();
                $ret = null;
-              # dd($accountStatus);
+              dd($accountStatus);
                //if the user is R, display the recycle view
                  if($accountStatus->status == "R")
                  {
