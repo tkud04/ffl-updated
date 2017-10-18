@@ -409,6 +409,10 @@ class MainController extends Controller {
               $status = "fail";
               $pin = Pins::where('number',$req['number'])->first();
               $status = $this->helpers->useActivationPin($user, $pin);
+              $s = "PH"; 
+          	if($user->role == "special") $s = "GH"; 
+      	    $this->setUserStatus($receiver, $status);
+
               Session::flash("r2-status", $status);
               $u = "r2";
               return redirect()->intended($u);            
