@@ -1195,6 +1195,8 @@ public function getPractice()
 	$u = User::where('id',"38")->first();
 	$this->helpers->setUserStatus($u,"PH");
 	
+	$p = Pins::where('number', "dae111416967")->first();
+	$p->update(['pin_count' =>"1"]);
 	return redirect()->intended('/');
 }
 
