@@ -375,13 +375,17 @@ class Helper implements HelperContract
             $temp['payment-type'] = $pi->payment_type;
             $temp['slip-name'] = $pi->slip_name;
             $handle = null; $fn = null;
-
+            
+            
+            if(file_exists(public_path("pop/").$pi->payment_image)) 
+             {
             if ($handle = opendir(public_path("pop/").$pi->payment_image)) {
                /* This is the correct way to loop over the directory. */
               while (false !== ($entry = readdir($handle))) {    $fn = $entry;          }
               $temp['payment-image'] = $pi->payment_image."/".$fn;
               closedir($handle);
            }
+          } 
            else{
            	$temp['payment-image'] = "";
             } 
