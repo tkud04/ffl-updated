@@ -326,6 +326,16 @@ class MainController extends Controller {
                    {
                    	$ret = $this->helpers->getMergedGivers($user);
                       # dd($ret);
+                      
+                        //get the count down
+                      $t1 = Carbon::parse($accountStatus->updated_at);
+                      $t1 = $t1->addHours(6);
+                      $t2 = Carbon::now();
+                      $a = $t2->gt($t1);
+                     if($a == true){
+                     	dd($ret);
+                     	$d  = Pool::where('receiver_id', $user->id)->where('amount', $req['price'])->where('status', 'pending_confirmation')->first();
+                      }            
                    }             	
                                      
                }
