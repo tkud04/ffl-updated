@@ -608,6 +608,7 @@ function unmerge($d,$giver)
                               
                if($receiver_pos == null)
               {
+               dd($temp);
             	$ret = min($temp);
                //get the user with that priority and make eligible
                $receiver_pos = PoolPosition::where('priority', $ret)->first();
