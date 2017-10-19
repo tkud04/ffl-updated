@@ -408,7 +408,7 @@ class Helper implements HelperContract
       	//get the next user to gh in the pool
          $this->setNextReceiver($package);
          $receiver_pos = PoolPosition::where('next','yes')->where('package', $package)->first();
-                       #dd($receiver_pos);
+                       dd($receiver_pos);
                        
            if($receiver_pos != null)
            {
@@ -604,11 +604,16 @@ function unmerge($d,$giver)
           
           else
           {
-               $receiver_pos = PoolPosition::where('next', 'after_us')->where('package',$package)->first();
+          	if(count($temp) < 1)
+              {
+              } 
+              
+              else
+              {
+                 $receiver_pos = PoolPosition::where('next', 'after_us')->where('package',$package)->first();
                               
                if($receiver_pos == null)
-              {
-               dd($temp);
+              {              
             	$ret = min($temp);
                //get the user with that priority and make eligible
                $receiver_pos = PoolPosition::where('priority', $ret)->first();
@@ -636,6 +641,7 @@ function unmerge($d,$giver)
                  #dd($temp);
               # dd($ras);
                $this->makeUserEligible($receiver,$package, "no", $receiver_pos->priority);
+            }             
           }                                                               
       }   
    }
