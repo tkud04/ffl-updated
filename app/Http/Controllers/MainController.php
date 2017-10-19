@@ -325,7 +325,7 @@ class MainController extends Controller {
                    else if($accountStatus->merged == "yes")
                    {
                    	$ret = $this->helpers->getMergedGivers($user);
-                      # dd($ret);
+                       dd($ret);
                       
                         //get the count down
                       $t1 = Carbon::parse($accountStatus->updated_at);
