@@ -419,7 +419,7 @@ class Helper implements HelperContract
            	$receiver = User::where('id', $receiver_pos->user_id)->first();
                $ras = AccountStatus::where('user_id', $receiver->id)->first();
                     #dd($ras);
-           if($ras->status == "GH" || $ras->status == "GH-E"  || $ras->status == "GH-O")
+           if(($ras->status == "GH" || $ras->status == "GH-E"  || $ras->status == "GH-O") && $ras->merged == "no") 
           {
           	if($ras->status == "GH-O"){
           	  $receiver_pos->update(['priority' => '-1','next' => 'no']);
