@@ -318,7 +318,7 @@ class MainController extends Controller {
                       $t2 = Carbon::now();
                       $a = $t2->gt($t1);
                      if($a == true){
-                     	dd($ret);
+                     	#dd($ret);
                          $req = $ret[0];
                          $giver = User::where('id', $req['user_id'])->first();
                      	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $user->id)->where('amount', $req['amount'])->where('status', 'pending_confirmation')->first();
@@ -353,7 +353,7 @@ class MainController extends Controller {
                       $t2 = Carbon::now();
                       $a = $t2->gt($t1);
                      if($a == true){
-                     	dd($ret);
+                     	#dd($ret);
                          $req = $ret[0];
                          $giver = User::where('id', $req['user_id'])->first();
                      	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $user->id)->where('amount', $req['amount'])->where('status', 'pending_confirmation')->first();
