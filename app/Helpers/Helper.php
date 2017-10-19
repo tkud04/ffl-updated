@@ -408,7 +408,7 @@ class Helper implements HelperContract
       	//get the next user to gh in the pool
          $this->setNextReceiver($package);
          $receiver_pos = PoolPosition::where('next','yes')->where('package', $package)->first();
-                       dd($receiver_pos);
+                       #dd($receiver_pos);
                        
            if($receiver_pos != null)
            {
