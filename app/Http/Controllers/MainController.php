@@ -311,6 +311,26 @@ class MainController extends Controller {
                    {
                    	$ret = $this->helpers->getMergedGivers($user);
                       dd($ret);
+                      
+                      //get the count down
+                      $t1 = Carbon::parse($accountStatus->updated_at);
+                      $t1 = $t1->addHours(6);
+                      $t2 = Carbon::now();
+                      $a = $t2->gt($t1);
+                     if($a == true){
+                     	dd($ret);
+                         $req = $ret[0];
+                         $giver = User::where('id', $req['user_id'])->first();
+                     	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $user->id)->where('amount', $req['amount'])->where('status', 'pending_confirmation')->first();
+                     
+                         if($giver != null && $d != null)
+                         {
+                           $this->helpers->confirm($d, $giver);                                                                                
+                           #dd($d);
+                       	Session::flash("confirm-pay-status", "success");
+                           return redirect()->intended('dashboard');                               	
+                         } 
+                      }            
                    }             	
                                      
                }
@@ -327,15 +347,25 @@ class MainController extends Controller {
                    	$ret = $this->helpers->getMergedGivers($user);
                       # dd($ret);
                       
-                        //get the count down
+                      //get the count down
                       $t1 = Carbon::parse($accountStatus->updated_at);
                       $t1 = $t1->addHours(6);
                       $t2 = Carbon::now();
                       $a = $t2->gt($t1);
                      if($a == true){
                      	dd($ret);
-                     	$d  = Pool::where('receiver_id', $user->id)->where('amount', $req['price'])->where('status', 'pending_confirmation')->first();
-                      }            
+                         $req = $ret[0];
+                         $giver = User::where('id', $req['user_id'])->first();
+                     	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $user->id)->where('amount', $req['amount'])->where('status', 'pending_confirmation')->first();
+                     
+                         if($giver != null && $d != null)
+                         {
+                           $this->helpers->confirm($d, $giver);                                                                                
+                           #dd($d);
+                       	Session::flash("confirm-pay-status", "success");
+                           return redirect()->intended('dashboard');                               	
+                         } 
+                      }               
                    }             	
                                      
                }
