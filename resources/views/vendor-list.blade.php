@@ -31,17 +31,21 @@
 <tbody>
 <tr>
 <td>1</td>
-<td>Joshua F.</td>
-<td>faiboi@gmail.com</td>
-<td>08086791398</td>
-<td><a class="btn btn-success" href="mailto:faiboi@gmail.com">Contact Vendor</a></td>
+<td>Vera</td>
+<td>0806 982 7824</td>
+<td><a class="btn btn-success" href="tel:+2348069827824">Contact Vendor</a></td>
 </tr>
 <tr>
 <td>2</td>
-<td>Hammed O.</td>
-<td>hammedolabode@gnail.com</td>
-<td>08085901051</td>
-<td><a class="btn btn-success" href="mailto:hammedolabode@gnail.com">Contact Vendor</a></td>
+<td>Olamide</td>
+<td>0812 763 5294</td>
+<td><a class="btn btn-success" href="tel:+2348127635294">Contact Vendor</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Teni</td>
+<td>0815 591 5820</td>
+<td><a class="btn btn-success" href="tel:+23408155915820">Contact Vendor</a></td>
 </tr>
 </tbody>
 </table>

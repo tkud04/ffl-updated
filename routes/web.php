@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'MainController@index');
+Route::get('/', 'MainController@getComingSoon');
+Route::get('beta', 'MainController@index');
 Route::get('how-it-works', 'MainController@getHowItWorks');
 
 Route::get('register-step-0', 'LoginController@getRegisterStep0');

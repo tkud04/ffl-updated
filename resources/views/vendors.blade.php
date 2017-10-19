@@ -15,9 +15,9 @@
                                 <i class="fa fa-user"></i>
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Joshua F.</h4>
-                                <p>faiboi@gmail.com<br>08086791398</p>
-                                <a class="btn btn-success" href="mailto:faiboi@gmail.com">Contact vendor</a>
+                                <h4 class="media-heading">Teni</h4>
+                                <p>0815 591 5820</p>
+                                <a class="btn btn-success" href="tel:+23408155915820">Contact vendor</a>
                             </div>
                         </div>
                     </div><!--/.col-md-6-->
@@ -28,9 +28,9 @@
                                 <i class="fa fa-user"></i>
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">Hammed O.</h4>
-                                <p>hammedolabode@gmail.com<br> 08085901051</p>
-                                <a class="btn btn-success" href="mailto:hammedolabode@gmail.com">Contact vendor</a>
+                                <h4 class="media-heading">Vera</h4>
+                                <p>0806 982 7824</p>
+                                <a class="btn btn-success" href="tel:+2348069827824">Contact vendor</a>
                             </div>
                         </div>
                     </div><!--/.col-md-6-->          

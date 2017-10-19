@@ -404,6 +404,7 @@ class Helper implements HelperContract
     //Merges a user to another user for ph
     public function merge($user, $package)
    {
+   	$status = "fail";
    	$uas = AccountStatus::where('user_id', $user->id)->first();      
        $p = Packages::where('id', $package)->first();
        
@@ -435,12 +436,15 @@ class Helper implements HelperContract
              //Update both users merged to yes
              $uas->merged = "yes"; $uas->awaiting_pay = "yes"; $uas->save();          
              $ras->merged = "yes"; $ras->awaiting_pay = "yes"; $ras->save();  
+             $status = "success";
            } 
 
           }    
           
         }   
       }
+      
+      return $status;
    }
    
 function unmerge($d,$giver)

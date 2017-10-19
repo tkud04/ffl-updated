@@ -253,9 +253,18 @@ class MainController extends Controller {
                    if($accountStatus->merged == "no")
                    {
                         $p = Packages::where('id',$accountStatus->package_id)->first();
-                        $this->helpers->merge($user,$p->id);
-                        Session::flash("redirect-status","success");
-                        return redirect()->intended('/'); 
+                        $status = $this->helpers->merge($user,$p->id);
+                        
+                        if($status == "success") 
+                         {
+                           Session::flash("redirect-status","success");
+                           return redirect()->intended('/'); 
+                         } 
+                         
+                        else if($status == "fail") 
+                         {
+                         #  return redirect()->intended('/'); 
+                         } 
                    }
                    
                    else if($accountStatus->merged == "yes")
@@ -326,9 +335,18 @@ class MainController extends Controller {
                    if($accountStatus->merged == "no")
                    {
                         $p = Packages::where('id',$accountStatus->package_id)->first();
-                        $this->helpers->merge($user,$p->id);
-                        Session::flash("redirect-status","success");
-                        return redirect()->intended('/'); 
+                        $status = $this->helpers->merge($user,$p->id);
+                        
+                        if($status == "success") 
+                         {
+                           Session::flash("redirect-status","success");
+                           return redirect()->intended('/'); 
+                         } 
+                         
+                        else if($status == "fail") 
+                         {
+                         #  return redirect()->intended('/'); 
+                         } 
                    }
                    
                    else if($accountStatus->merged == "yes")
