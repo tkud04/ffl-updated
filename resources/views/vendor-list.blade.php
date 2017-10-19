@@ -23,7 +23,6 @@
 <tr>
 <th>SN</th>
 <th>Name</th>
-<th>Email</th>
 <th>Phone</th>
 <th>Contact</th>
 </tr>
