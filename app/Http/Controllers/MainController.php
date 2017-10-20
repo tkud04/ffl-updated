@@ -280,10 +280,11 @@ class MainController extends Controller {
                      if($a == true){
                          $giver = User::where('id', $ret['user_id'])->first();
                      	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $ret['receiver_id'])->where('amount', $ret['amount'])->where('status', 'pending_confirmation')->first();
-                     
+                         dd($d);
+                         
                          if($giver != null && $d != null)
                          {
-                         	dd($d);
+                         	#dd($d);
                            $this->helpers->confirm($d, $giver);                                                                                
                            #dd($d);
                        	Session::flash("confirm-pay-status", "success");
