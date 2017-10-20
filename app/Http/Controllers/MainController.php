@@ -277,7 +277,20 @@ class MainController extends Controller {
                       $t2 = Carbon::now();
                       $a = $t2->gt($t1);
                      if($a == true){
-                     	$this->getBlock();
+                         $giver = User::where('id', $ret['user_id'])->first();
+                     	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $ret['receiver_id'])->where('amount', $ret['amount'])->where('status', 'pending_confirmation')->first();
+                     
+                         if($giver != null && $d != null)
+                         {
+                           $this->helpers->confirm($d, $giver);                                                                                
+                           #dd($d);
+                       	Session::flash("confirm-pay-status", "success");
+                           return redirect()->intended('dashboard');                               	
+                         } 
+                         else
+                          {
+                     	   $this->getBlock();
+                          } 
                       }             
                    }             	
                                      
