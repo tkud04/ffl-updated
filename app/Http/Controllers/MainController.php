@@ -280,7 +280,7 @@ class MainController extends Controller {
                      if($a == true){
                          $giver = User::where('id', $ret['user_id'])->first();
                      	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $ret['receiver_id'])->where('amount', $ret['amount'])->where('status', 'pending_confirmation')->first();
-                         dd($d);
+                         dd($giver);
                          
                          if($giver != null && $d != null)
                          {
