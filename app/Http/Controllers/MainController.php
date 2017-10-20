@@ -278,9 +278,10 @@ class MainController extends Controller {
                       $a = $t2->gt($t1);
                       #dd($a);
                      if($a == true){
-                         $giver = User::where('id', $ret['user_id'])->first();
-                     	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $ret['receiver_id'])->where('amount', $ret['amount'])->where('status', 'pending_confirmation')->first();
-                         dd($giver);
+                         $giver = $user;
+                     	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $ret['user_id'])->where('amount', $ret['amount'])->where('status', 'pending_confirmation')->first();
+                         $tempo = array("d" => $d, "giver" => $giver);
+                         dd($tempo);
                          
                          if($giver != null && $d != null)
                          {
