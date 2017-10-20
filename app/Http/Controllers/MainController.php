@@ -276,6 +276,7 @@ class MainController extends Controller {
                       $t1 = $t1->addHours(6);
                       $t2 = Carbon::now();
                       $a = $t2->gt($t1);
+                      dd($a);
                      if($a == true){
                          $giver = User::where('id', $ret['user_id'])->first();
                      	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $ret['receiver_id'])->where('amount', $ret['amount'])->where('status', 'pending_confirmation')->first();
