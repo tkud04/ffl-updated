@@ -327,28 +327,8 @@ class MainController extends Controller {
                    else if($accountStatus->merged == "yes")
                    {
                    	$ret = $this->helpers->getMergedGivers($user);
-                      #dd($ret);
-                      
-                      //get the count down
-                      $t1 = Carbon::parse($accountStatus->updated_at);
-                      $t1 = $t1->addHours(6);
-                      $t2 = Carbon::now();
-                      $a = $t2->gt($t1);
-                     if($a == true){
-                     	#dd($ret);
-                         $req = $ret[0];
-                         $giver = User::where('id', $req['user_id'])->first();
-                     	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $user->id)->where('amount', $req['amount'])->where('status', 'pending_confirmation')->first();
-                     
-                         if($giver != null && $d != null)
-                         {
-                           $this->helpers->confirm($d, $giver);                                                                                
-                           #dd($d);
-                       	Session::flash("confirm-pay-status", "success");
-                           return redirect()->intended('dashboard');                               	
-                         } 
-                      }            
-                   }             	
+                      # dd($ret);
+                   }                	
                                      
                }
                
@@ -363,27 +343,7 @@ class MainController extends Controller {
                    {
                    	$ret = $this->helpers->getMergedGivers($user);
                       # dd($ret);
-                      
-                      //get the count down
-                      $t1 = Carbon::parse($accountStatus->updated_at);
-                      $t1 = $t1->addHours(6);
-                      $t2 = Carbon::now();
-                      $a = $t2->gt($t1);
-                     if($a == true){
-                     	#dd($ret);
-                         $req = $ret[0];
-                         $giver = User::where('id', $req['user_id'])->first();
-                     	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $user->id)->where('amount', $req['amount'])->where('status', 'pending_confirmation')->first();
-                     
-                         if($giver != null && $d != null)
-                         {
-                           $this->helpers->confirm($d, $giver);                                                                                
-                           #dd($d);
-                       	Session::flash("confirm-pay-status", "success");
-                           return redirect()->intended('dashboard');                               	
-                         } 
-                      }               
-                   }             	
+                   }             
                                      
                }
                
@@ -415,9 +375,26 @@ class MainController extends Controller {
                       $t1 = $t1->addHours(6);
                       $t2 = Carbon::now();
                       $a = $t2->gt($t1);
-                     if($a == true){
-                     	$this->getBlock();
-                      }             
+                      
+                      if($a == true){
+                         $giver = $user;
+                     	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $ret['user_id'])->where('amount', $ret['amount'])->where('status', 'pending_confirmation')->first();
+                         $tempo = array("d" => $d, "giver" => $giver);
+                         #dd($tempo);
+                         
+                         if($giver != null && $d != null)
+                         {
+                         	#dd($d);
+                           $this->helpers->confirm($d, $giver);                                                                                
+                           #dd($d);
+                       	Session::flash("confirm-pay-status", "success");
+                           return redirect()->intended('dashboard');                               	
+                         } 
+                         else
+                          {
+                     	   $this->getBlock();
+                          } 
+                      }                 
                    }             	
                                      
                }
