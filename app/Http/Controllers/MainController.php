@@ -281,7 +281,7 @@ class MainController extends Controller {
                          $giver = $user;
                      	$d  = Pool::where('giver_id', $giver->id)->where('receiver_id', $ret['user_id'])->where('amount', $ret['amount'])->where('status', 'pending_confirmation')->first();
                          $tempo = array("d" => $d, "giver" => $giver);
-                         dd($tempo);
+                         #dd($tempo);
                          
                          if($giver != null && $d != null)
                          {
