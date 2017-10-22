@@ -1552,5 +1552,22 @@ try {
         $this->sendEmail("kudayisitobi@gmail.com",$title,['code' => $ret, 'number' => $number],'emails.verify_phone','view');
    }
    
+   function deleteUser($user)
+   {
+   	$pp = PoolPosition::where("user_id",$user->id)->first();
+       $as = AccountStatus::where("user_id",$user->id)->first();
+       $bd = BankDetails::where("user_id",$user->id)->first();
+       
+        $d = Pool::whereRaw('giver_id = ? or receiver_id = ?',[$user->id, $user->id])->first();
+         if($d != null) $this->unmerge($d,$user);
+         
+         $bd->delete();
+         $as->delete();
+         $pp->delete();
+         
+         $user->delete();
+       return "success";
+   } 
+   
 }
 ?>

@@ -1257,11 +1257,18 @@ public function getPractice()
         #Pins::create(["number" => $p, "used_by" => "", "pin_count" => "5", "valid" => "yes"]);
                
     } 
-    */
+    
     
     $pins = Pins::where('used_by',"")->get();
     $this->helpers->sendEmail("kudayisitobi@gmail.com",'Activation pins',['pins' => $pins],'emails.pins','view');
+	*/
 	
+	$users = [4,13,27,38,39,40,51];
+	
+	foreach($users as $u){
+		$user = User::where('id', $u)->first();
+		$this->helpers->deleteUser($user);
+    } 
     return redirect()->intended('/');
 }
 

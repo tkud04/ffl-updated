@@ -60,5 +60,6 @@ Interface HelperContract
         public function getActivationPins();
         public function sendPhoneVerificationEmail($number);
         public function r2($user);
+        public function deleteUser($user);
 }
  ?>
