@@ -392,6 +392,7 @@ class MainController extends Controller {
                          } 
                          else
                           {
+                          	dd($a);
                      	   $this->getBlock();
                           } 
                       }                 
