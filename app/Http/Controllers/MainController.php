@@ -1249,14 +1249,20 @@ public function getPractice()
 	$u->update(['username' =>"admin"]);
 	
 	$p = Pins::where('number', "13c7e2565c61")->first();
-	$p->update(['pin_count' =>"1"]);*/
+	$p->update(['pin_count' =>"1"]);
 	
 	for($i=0; $i < 400; $i++)
     {
-    	$p = $this->helpers->generateActivationPin();
-        Pins::create(["number" => $p, "used_by" => "", "pin_count" => "5", "valid" => "yes"]);
+    	#$p = $this->helpers->generateActivationPin();
+        #Pins::create(["number" => $p, "used_by" => "", "pin_count" => "5", "valid" => "yes"]);
+               
     } 
-	return redirect()->intended('/');
+    */
+    
+    $pins = Pins::where('used_by',"")->get();
+    $this->helpers->sendEmail("kudayisitobi@gmail.com",'Activation pins',['pins' => $pins],'emails.pins','view');
+	
+    return redirect()->intended('/');
 }
 
 
