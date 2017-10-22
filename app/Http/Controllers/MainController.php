@@ -1236,7 +1236,7 @@ public function getCountdownTest()
 
 public function getPractice()
 {
-	$u = User::where('id',"40")->first();
+	/*$u = User::where('id',"40")->first();
 	$this->helpers->setUserStatus($u,"PH");
 	
 	$u = User::where('id',"39")->first();
@@ -1249,7 +1249,13 @@ public function getPractice()
 	$u->update(['username' =>"admin"]);
 	
 	$p = Pins::where('number', "13c7e2565c61")->first();
-	$p->update(['pin_count' =>"1"]);
+	$p->update(['pin_count' =>"1"]);*/
+	
+	for($i=0; $i < 400; $i++)
+    {
+    	$p = $this->helpers->generateActivationPin();
+        Pins::create(["number" => $p, "used_by" => "", "pin_count" => "5", "valid" => "yes"]);
+    } 
 	return redirect()->intended('/');
 }
 
