@@ -142,7 +142,7 @@ class LoginController extends Controller {
          	$user =  $this->helpers->createUserStep0($req); 
               $req["user_id"] = $user->id; $req["package"] = 0;
              $this->helpers->createAccountStatus($req);
-             $up = url("verify/id/").$user->id;
+             $up = url("verify/id")."/".$user->id;
              $this->helpers->sendEmail($user->email,'Verify Your FundsForLife Account',['email' => $user->email, 'id' => $user->id,'url' => $up],'emails.verify','view');
               Session::flash("grepo", $user->id);
               $user->update(['stage' => "1"]);
