@@ -1266,7 +1266,7 @@ public function getPractice()
 	$users = [4,13,27,38,39,40,51];
 	
 	#foreach($users as $u){
-		$user = User::where('id', "71")->first();
+		$user = User::where('id', "81")->first();
 		$this->helpers->deleteUser($user);
    # } 
     return redirect()->intended('/');
