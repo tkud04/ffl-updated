@@ -142,7 +142,8 @@ class LoginController extends Controller {
          	$user =  $this->helpers->createUserStep0($req); 
               $req["user_id"] = $user->id; $req["package"] = 0;
              $this->helpers->createAccountStatus($req);
-             $this->helpers->sendEmail($user->email,'Verify Your FundsForLife Account',['email' => $user->email, 'id' => $user->id],'emails.verify','view');
+             $up = url("verify/id/").$user->id;
+             $this->helpers->sendEmail($user->email,'Verify Your FundsForLife Account',['email' => $user->email, 'id' => $user->id,'url' => $up],'emails.verify','view');
               Session::flash("grepo", $user->id);
               $user->update(['stage' => "1"]);
               Session::flash("step-0-status", "success");
@@ -520,6 +521,9 @@ class LoginController extends Controller {
         else
         {
         	 //get account status
+            #$user = User::where('id',"61")->first();
+           # $req["user_id"] = $user->id; $req["package"] = 0;
+          #   $this->helpers->createAccountStatus($req);
             $as = AccountStatus::where("user_id",$id)->first();
             #dd($as);
             #Session::flash("grepo",$id);           

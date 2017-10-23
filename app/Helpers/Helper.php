@@ -1561,9 +1561,9 @@ try {
         $d = Pool::whereRaw('giver_id = ? or receiver_id = ?',[$user->id, $user->id])->first();
          if($d != null) $this->unmerge($d,$user);
          
-         $bd->delete();
-         $as->delete();
-         $pp->delete();
+         if($bd != null) $bd->delete();
+         if($as != null) $as->delete();
+         if($pp != null) $pp->delete();
          
          $user->delete();
        return "success";
