@@ -242,13 +242,14 @@ class Helper implements HelperContract
         {
         	foreach($news as $n)
             {
-            	$temp = array();
+           	$temp = array();
                 $msg = explode("_#_",$n->message);
                 $temp['id'] = $n->id;
                 $temp['news-id'] = $n->news_id;
                 $temp['current'] = $n->current;
                 $temp['title'] = $msg[0];
                 $temp['body'] = $msg[1];
+                $n->created_at = Carbon::createFromFormat('Y-m-d H', '2017-10-23 08');
                 $temp['date'] = $n->created_at->format("jS F,Y h:i A");
                 shuffle($images);
                 $temp['news-image'] = asset("fundsforlife/images")."/".$images[0];
