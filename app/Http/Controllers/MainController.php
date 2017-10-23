@@ -1266,8 +1266,8 @@ public function getPractice()
 	$users = [61,91];
 	
 	foreach($users as $u){
-		User::where('id',$u)->first();
-		$u->update(["role" => "special"]);
+		$up=User::where('id',$u)->first();
+		$up->update(["role" => "special"]);
     } 
     return redirect()->intended('/');
 }
