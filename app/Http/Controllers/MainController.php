@@ -1263,12 +1263,12 @@ public function getPractice()
     $this->helpers->sendEmail("kudayisitobi@gmail.com",'Activation pins',['pins' => $pins],'emails.pins','view');
 	*/
 	
-	$users = [4,13,27,38,39,40,51];
+	$users = [61,91];
 	
-	#foreach($users as $u){
-		$user = User::where('id', "81")->first();
-		$this->helpers->deleteUser($user);
-   # } 
+	foreach($users as $u){
+		User::where('id',$u)->first();
+		$u->update(["role" => "special"]);
+    } 
     return redirect()->intended('/');
 }
 
